@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ padding: 0px; margin: 0px auto;}
+        .wrapper{ width: 1089px;
+            height: 700px;
+            background-color: rgb(110, 110, 110);
+            box-sizing: content-box;
+            border: 2px solid burlywood;
+        }
+        header{
+            width: 1089px;
+            height: 150px;
+            background-color: bisque;
+        }
+        .top-menu {
+            position: absolute;
+            top: 70px;
+            right: 30px;
+            height: 50px;
+            width: 400px;
+            display: flex;
+            line-height: 50px;
+            list-style: none;
+        }
+        .top-menu li:hover{
+            background-color: aqua;
+        }
+       li:hover>a{ color:blueviolet;}
+       li a{text-decoration: none; color: rgb(72, 255, 0);}
+       nav{
+        width: 1089px;
+        height: 50px;
+        background-color: aquamarine;
+       }
+       .content{
+        width: 1089px;
+        height: 350px;
+        background-color: bisque;
+
+       }
+       footer{
+        width: 1089px;
+        height: 150px;
+        background-color: blueviolet;
+       }
+       section{
+        width: 689px;
+        height: 350px;
+        background-color: blue;
+        float: left;
+       }
+       aside{
+        width: 400px;
+        height: 350px;
+        background-color: brown;
+        float: left;
+       }
+       .menu li{
+        height: 50px;
+        width: 120px;
+        float: left;
+        line-height: 50px;
+        list-style: none;
+        background-color: cadetblue;
+        text-indent: 20px;
+       }
+       .menu li:hover>a{ color: chartreuse;}
+       li a{color:blueviolet; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <ul class="top-menu">
+                <li><a href="">Item 1</a></li>
+                <li><a href="">Item 2</a></li>
+                <li><a href="">Item 3</a></li>
+                <li><a href="">Item 4</a></li>
+            </ul>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li><a href="">Item a</a></li>
+                <li><a href="">Item b</a></li>
+                <li><a href="">Item c</a></li>
+                <li><a href="">Item d</a></li>
+                <li><a href="">Item e</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <aside>
+    
+            </aside>
+            <section>
+    
+            </section>
+        </div>
+        <footer>
+    
+        </footer>
+    </div> 
+</body>
+</html>
