@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#open').click(function() {
+                $('.modal').show();
+            });
+            $('.btn-close').click(function() {
+                $('.modal').hide();
+            });
+            $('#bt-close2').click(function() {
+                $('.modal').hide();
+            });
+    
+        });
+        function ktEmail(){
+            var reemail=/^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$/;
+            if(reemail.test(document.getElementById("txtEmail").value.trim())==true){
+                email.innerText="";
+                return true;
+            }
+            else{
+                email.innerText="*Cần có @.gmail...";
+                return false;
+            }
+        };
+        function ktTenDN(){
+            var reten=/^[a-z].*/;
+            if(reten.test(document.getElementById("txtTdn").value.trim())==true){
+                tendn.innerText="";
+                return true;
+            }
+            else{
+                tendn.innerText="*Cần bắt đầu bằng chữ";
+                return false;
+            }
+        };
+        function ktPass(){
+            var repass=/(?=.*\d).{6,}/;
+            if(repass.test(document.getElementById("txtPass").value.trim())==true){
+                pass.innerText="";
+                return true;
+            }
+            else{
+                pass.innerText="*chữ,số,lớn hơn 6 kí tự";
+                return false;
+            }
+        };
+        function ktxnPass(){
+            if((document.getElementById("txtPass").value.trim())==document.getElementById("txtxnPass").value.trim()){
+                xnpass.innerText="";
+                return true;
+            }
+            else{
+                xnpass.innerText="*Cần gióng ô password";
+                return false;
+            }
+        };
+        function ktDangKy(){
+            if(ktEmail()==false ||ktTenDN()==false ||ktPass()==false || ktxnPass()==false){
+                alert("đăng ký không thành công");
+                return false;
+            }
+            else{
+                alert("đăng ký thành công");
+                return true;
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="row bg-dark">
+                <div class="col-sm-2">
+                    <img class="w-50" src="../img/logo-quan-4-tphcm.png" alt="" srcset="">
+                </div>
+                <div class="col-sm-10 my-2">
+                    <span style="font-weight: bold; font-size: 50px; color: darkkhaki;">
+                        QUAN 4 TP.HCM
+                    </span>
+
+                </div>
+            </div>
+
+        </header>
+        <div class="row col-sm-12">
+            <nav class="navbar navbar-expand">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="open">Open</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Item 1</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Item 1</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row col-sm-12">
+            
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+           
+            
+        </div>
+        <div class="modal"tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">ĐĂNG KÝ</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="txtEmail" onblur="return ktEmail();" placeholder="Email" aria-describedby="emailHelp">
+                                <span style="color: red;" id="email">*</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputTendn" class="form-label">Tên đăng nhập</label>
+                                <input type="text" onblur="return ktTenDN();" class="form-control" id="txtTdn">
+                                <span style="color: red;" id="tendn">*</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" onblur="ktPass();" class="form-control" id="txtPass">
+                                <span style="color: red;" id="pass">*</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputxnpw" class="form-label">Xác nhận Password</label>
+                                <input type="password" onblur="ktxnPass();" class="form-control" id="txtxnPass">
+                                <span style="color: red;" id="xnpass">*</span>
+                            </div>
+                           
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="bt-close2" data-bs-dismiss="modal">Close</button>
+                        <button type="button" onclick="return ktDangKy();" class="btn btn-primary">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="row col-sm-12 bg-dark text-danger">
+
+                copyright2023
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
